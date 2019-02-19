@@ -6,4 +6,19 @@ function jediName(firstName, lastName){
   return firstJediName + lastJediName; 
 }
 
-console.log(jediName('Farah', 'Gustafson'));
+function beyond(num) {
+  if (num == Number.POSITIVE_INFINITY || num == Number.NEGATIVE_INFINITY) {
+    console.log('And beyond');
+  } else if (num > 0) {
+    console.log('To infinity');
+  } else if (num < 0) {
+    console.log('To negative infinity');
+  } else if (num === 0) {
+    console.log('Staying home');
+  }
+}
+
+console.log(beyond(5));
+console.log(beyond(-100));
+console.log(beyond(0));
+
