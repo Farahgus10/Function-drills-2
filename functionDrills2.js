@@ -18,7 +18,31 @@ function beyond(num) {
   }
 }
 
-console.log(beyond(5));
-console.log(beyond(-100));
-console.log(beyond(0));
 
+function decode(encryptedSentence) {
+  const words = encryptedSentence.split(' ');
+  let decoded = '';
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    let letter = word[0];
+    switch(letter) {
+    case 'a' :
+      decoded += word[1];
+      break;
+    case 'b' :
+      decoded += word[2];
+      break;
+    case 'c' :
+      decoded += word[3];
+      break;
+    case 'd' :
+      decoded += word[4];
+      break;
+    default :
+      decoded += ' ';
+    }
+  }
+  return decoded;
+}
+
+console.log(decode('craft block argon meter bells brown croon droop'));
