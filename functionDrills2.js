@@ -50,33 +50,75 @@ console.log(decode('craft block argon meter bells brown croon droop'));
 function monthDays (month, leapYear){
   let result;
   switch (month) {
-    case 'January':
-    case 'March':
-    case 'May':
-    case 'July':
-    case 'August':
-    case 'October':
-    case 'December':
-      result = `${month} has 31 days.`;
-      break;
-    case 'April':
-    case 'June':
-    case 'September':
-    case 'November':
-      result = `${month} has 30 days.`;
-      break;
-    case 'February':
-      if (leapYear) {
+  case 'January':
+  case 'March':
+  case 'May':
+  case 'July':
+  case 'August':
+  case 'October':
+  case 'December':
+    result = `${month} has 31 days.`;
+    break;
+  case 'April':
+  case 'June':
+  case 'September':
+  case 'November':
+    result = `${month} has 30 days.`;
+    break;
+  case 'February':
+    if (leapYear) {
       result = `February has 29 days.`;  
-      }    
-      else {
+    }    
+    else {
       result = `February has 28 days.`;
-      }
-      break;
-    default: 
-      throw new Error ('Must provide a valid month.');
+    }
+    break;
+  default: 
+    throw new Error ('Must provide a valid month.');
   }
   return result;
 }
 
 console.log(monthDays('June', false));
+
+
+function rockPaperScissors(move){
+  const computerWin = 'Computer wins!';
+  const playerWin = 'You win!';
+
+  const computerMove = Math.floor(Math.random() * 3) + 1;
+  if (move !== 1 && move !== 2 && move !== 3){
+    throw new Error ('Number must be 1, 2, or 3.');
+  }
+  if (move === computerMove){
+    return 'It\'s a tie!';
+  }
+  
+  switch (computerMove) {
+  case 1: 
+    if (move === 2){
+      return computerWin;
+    }
+    else {
+      return playerWin;
+    }
+
+  case 2:
+    if (move === 1){
+      return playerWin;
+    }
+    else {
+      return computerWin;
+    }
+
+  case 3:
+    if (move === 1){
+      return playerWin;
+    }
+    else {
+      return computerWin;
+    }
+  }
+}
+
+console.log(rockPaperScissors(2));
